@@ -1,9 +1,9 @@
 # CI/CD Course Progress
 
 ## Module 1 – CI/CD Fundamentals
-- [ ] What is CI/CD
-- [ ] CI vs CD
-- [ ] Pipeline stages
+- [x] What is CI/CD			Automatically build, test, report and deploy the code. 
+- [x] CI vs CD				
+- [x] Pipeline stages		build -> Test -> Report -> Deploy
 
 ## Module 2 – Git Workflows
 - [ ] Branching strategies
