@@ -12,4 +12,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run CI checks
-        run: echo "CI bootstrap on main"
+        run: bash module-04-failing-ci/check.sh
