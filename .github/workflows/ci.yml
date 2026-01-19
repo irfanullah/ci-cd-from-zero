@@ -11,5 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+<<<<<<< HEAD
       - name: Run build
         run: echo "Build successful"
+=======
+      - name: Run CI checks
+        run: echo "CI bootstrap on main"
+>>>>>>> chore: bootstrap CI workflow on main
