@@ -1,9 +1,13 @@
 #!/bin/bash
+set -e
 
 echo "Starting deployment..."
-
 echo "Deploying to environment: $DEPLOY_ENV"
 
-sleep 3
+if [ "$DEPLOY_ENV" = "production" ]; then
+  echo "🚨 PRODUCTION DEPLOYMENT 🚨"
+else
+  echo "🧪 Staging deployment"
+fi
 
-echo "Application deployed successfully!"
+echo "Deployment completed successfully"
