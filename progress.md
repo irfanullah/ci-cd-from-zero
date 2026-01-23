@@ -6,8 +6,8 @@
 - [x] Pipeline stages		build -> Test -> Report -> Deploy
 
 ## Module 2 – Git Workflows
-- [ ] Branching strategies
-- [ ] Pull request checks
+- [x] Branching strategies
+- [x] Pull request checks
 
 ## Module 3 – GitHub Actions
 - [ ] First workflow

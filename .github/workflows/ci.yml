@@ -2,29 +2,17 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      APP_ENV: development
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Show secret (demo only)
-        run: echo "Secret is ${{ secrets.DEMO_SECRET }}"
-
-      - name: Run Module 5 checks
-        run: bash module-05-secrets-artifacts/check.sh
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: module-5-artifact
-          path: module-05-secrets-artifacts/artifact.txt
+      - uses: actions/checkout@v4
+      - name: Run CI checks
+        run: bash module-04-failing-ci/check.sh

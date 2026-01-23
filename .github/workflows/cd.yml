@@ -2,22 +2,25 @@ name: CD Pipeline
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows:
+      - CI Pipeline
+    types:
+      - completed
 
 jobs:
   deploy:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
 
+    environment: staging
+
+    env:
+      DEPLOY_ENV: staging
+
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Deploying to staging"
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-
-
-
-
-
-
-
+      - name: Deploy application
+        run: bash module-06-deploy/deploy.sh
